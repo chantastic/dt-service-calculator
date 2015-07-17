@@ -2,52 +2,36 @@
 // Component Stylesheet
 // --------------------
 */
-
 .DTServiceCalculator {
   width: 340px;
 }
-
-.ServiceList { }
-
 .ServiceItem {
   margin-bottom: 3px;
   padding: 15px 20px;
-
   background-color: #F8F8F8;
   color: #7B8585;
   cursor: pointer;
-
   transition: 0.3s;
-
-  &:hover {
-    background-color:#d8f2f1;
-  }
 }
-
-.ServiceItem_name {}
-
+.ServiceItem:hover {
+  background-color: #d8f2f1;
+}
 .ServiceItem_price {
   float: right;
   font-weight: bold;
 }
-
 .SelectedServiceTotal {
   padding: 15px 20px;
   color: #7B8585;
 }
-
-.SelectedServiceTotal_label {}
-
 .SelectedServiceTotal_total {
   float: right;
   font-weight: bold;
 }
-
 /* 
 // Examples Stylesheet
 // -------------------
 */
-
 body {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -55,23 +39,19 @@ body {
   margin: 0;
   padding: 0;
 }
-
 a {
   color: #08c;
   text-decoration: none;
 }
-
 a:hover {
   text-decoration: underline;
 }
-
 .container {
   margin-left: auto;
   margin-right: auto;
   max-width: 720px;
   padding: 1em;
 }
-
 .footer {
   margin-top: 50px;
   border-top: 1px solid #eee;
@@ -79,13 +59,16 @@ a:hover {
   font-size: 12px;
   color: #999;
 }
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: #222;
   font-weight: 100;
   margin: 0.5em 0;
 }
-
 label {
   color: #999;
   display: inline-block;
@@ -94,7 +77,6 @@ label {
   margin: 1em 0;
   text-transform: uppercase;
 }
-
 .hint {
   margin: 15px 0;
   font-style: italic;

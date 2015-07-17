@@ -1,4 +1,5 @@
 var React = require('react');
+var classnames = require('classnames');
 
 var DtServiceCalculator = React.createClass({
   getInitialState () {
@@ -12,13 +13,29 @@ var DtServiceCalculator = React.createClass({
     };
   },
 
+  handleServiceClick (index) {
+    // make a copy
+    let services = [...this.state.services];
+
+    // toggle chosen prop
+    services[index].chosen = (services[index].chosen) ? false : true;
+
+    // setState for re-render
+    this.setState({ services: services });
+  },
+
   render () {
     return (
       <div className="DTServiceCalculator">
         <div className="ServiceList">
-          {this.state.services.map(({name, price}) => {
+          {this.state.services.map(({name, price, chosen}, i) => {
             return (
-              <div className="ServiceItem">
+              <div
+               className={classnames(
+                 'ServiceItem',
+                 chosen && 'isChosen'
+               )}
+               onClick={this.handleServiceClick.bind(null, i)}>
                 <span className="ServiceItem_name">{name}</span>
                 <span className="ServiceItem_price">${price}</span>
               </div>

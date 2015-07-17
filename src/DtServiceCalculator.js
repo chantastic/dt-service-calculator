@@ -1,6 +1,14 @@
 var React = require('react');
 var classnames = require('classnames');
 
+function chosenServices (service) {
+  return service.chosen && service;
+}
+
+function totalServicePrices (previous, current) {
+  return parseInt(previous, 10) + parseInt(current.price, 10);
+}
+
 var DtServiceCalculator = React.createClass({
   getInitialState () {
     return {
@@ -11,6 +19,12 @@ var DtServiceCalculator = React.createClass({
         { id: 4, name: 'Training', price: 220 }
       ]
     };
+  },
+
+  getSelectedServicesTotalPrice () {
+    return this.state.services
+      .filter(chosenServices)
+      .reduce(totalServicePrices, 0);
   },
 
   handleServiceClick (index) {
@@ -45,7 +59,9 @@ var DtServiceCalculator = React.createClass({
 
         <div className="SelectedServiceTotal">
           <span className="SelectedServiceTotal_label">Total</span>
-          <span className="SelectedServiceTotal_total">$0</span>
+          <span className="SelectedServiceTotal_total">
+            ${this.getSelectedServicesTotalPrice()}
+          </span>
         </div>
       </div>
     );

@@ -1,4 +1,54 @@
 /* 
+// Component Stylesheet
+// --------------------
+*/
+
+.DTServiceCalculator {
+  width: 340px;
+}
+
+.ServiceList { }
+
+.ServiceItem {
+  margin-bottom: 3px;
+  padding: 15px 20px;
+
+  background-color: #F8F8F8;
+  color: #7B8585;
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+    background-color:#d8f2f1;
+  }
+
+  &.isChosen {
+    color:#fff;
+    background-color:#41c7c2;
+  }
+}
+
+.ServiceItem_name {}
+
+.ServiceItem_price {
+  float: right;
+  font-weight: bold;
+}
+
+.SelectedServiceTotal {
+  padding: 15px 20px;
+  color: #7B8585;
+}
+
+.SelectedServiceTotal_label {}
+
+.SelectedServiceTotal_total {
+  float: right;
+  font-weight: bold;
+}
+
+/* 
 // Examples Stylesheet
 // -------------------
 */

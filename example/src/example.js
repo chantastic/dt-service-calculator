@@ -5,7 +5,6 @@ var App = React.createClass({
   render () {
     return (
       <div>
-        <h1>Our Services</h1>
         <DtServiceCalculator />
       </div>
     );

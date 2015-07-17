@@ -10,7 +10,7 @@ var DtServiceCalculator = React.createClass({
             <span className="ServiceItem_price">$300</span>
           </div>
 
-          <div className="ServiceItem">
+          <div className="ServiceItem isChosen">
             <span className="ServiceItem_name">Design</span>
             <span className="ServiceItem_price">$400</span>
           </div>
@@ -27,8 +27,8 @@ var DtServiceCalculator = React.createClass({
         </div>
 
         <div className="SelectedServiceTotal">
-          <span className="SelectedServicTotal_label">Total</span>
-          <span className="SelectedServicTotal_total">$0</span>
+          <span className="SelectedServiceTotal_label">Total</span>
+          <span className="SelectedServiceTotal_total">$0</span>
         </div>
       </div>
     );

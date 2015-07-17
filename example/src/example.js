@@ -1,11 +1,11 @@
 var React = require('react');
-var DtServiceCalculator = require('dt-service-calculator');
+var DtServiceCalculatorContainer = require('./DtServiceCalculatorContainer');
 
 var App = React.createClass({
   render () {
     return (
       <div>
-        <DtServiceCalculator />
+        <DtServiceCalculatorContainer />
       </div>
     );
   }

@@ -11,37 +11,27 @@ function totalServicePrices (previous, current) {
 
 var DtServiceCalculator = React.createClass({
   propTypes: {
-    initialServices: React.PropTypes.arrayOf(
+    onSelect: React.PropTypes.func.isRequired,
+    services: React.PropTypes.arrayOf(
       React.PropTypes.object
     ).isRequired
   },
 
-  getInitialState () {
-    return { services: this.props.initialServices };
-  },
-
   getSelectedServicesTotalPrice () {
-    return this.state.services
+    return this.props.services
       .filter(chosenServices)
       .reduce(totalServicePrices, 0);
   },
 
   handleServiceClick (index) {
-    // make a copy
-    let services = [...this.state.services];
-
-    // toggle chosen prop
-    services[index].chosen = (services[index].chosen) ? false : true;
-
-    // setState for re-render
-    this.setState({ services: services });
+    this.props.onSelect(index);
   },
 
   render () {
     return (
       <div className="DTServiceCalculator">
         <div className="ServiceList">
-          {this.state.services.map(({name, price, chosen}, i) => {
+          {this.props.services.map(({name, price, chosen}, i) => {
             return (
               <div
                className={classnames(

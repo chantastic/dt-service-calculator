@@ -1,29 +1,29 @@
 var React = require('react');
 
 var DtServiceCalculator = React.createClass({
+  getInitialState () {
+    return {
+      services: [
+        { id: 1, name: 'Web Development', price: 300 },
+        { id: 2, name: 'Design', price: 400 },
+        { id: 3, name: 'Integration', price: 250 },
+        { id: 4, name: 'Training', price: 220 }
+      ]
+    };
+  },
+
   render () {
     return (
       <div className="DTServiceCalculator">
         <div className="ServiceList">
-          <div className="ServiceItem">
-            <span className="ServiceItem_name">Web Development</span>
-            <span className="ServiceItem_price">$300</span>
-          </div>
-
-          <div className="ServiceItem isChosen">
-            <span className="ServiceItem_name">Design</span>
-            <span className="ServiceItem_price">$400</span>
-          </div>
-
-          <div className="ServiceItem">
-            <span className="ServiceItem_name">Integration</span>
-            <span className="ServiceItem_price">$250</span>
-          </div>
-
-          <div className="ServiceItem">
-            <span className="ServiceItem_name">Training</span>
-            <span className="ServiceItem_price">$220</span>
-          </div>
+          {this.state.services.map(({name, price}) => {
+            return (
+              <div className="ServiceItem">
+                <span className="ServiceItem_name">{name}</span>
+                <span className="ServiceItem_price">${price}</span>
+              </div>
+            );
+          })}
         </div>
 
         <div className="SelectedServiceTotal">

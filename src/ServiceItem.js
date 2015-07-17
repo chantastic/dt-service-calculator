@@ -1,5 +1,11 @@
 var React = require('react');
-var classnames = require('classnames');
+
+const styles = {
+  chosen: {
+    color: '#fff',
+    backgroundColor: '#41c7c2'
+  }
+};
 
 var ServiceItem = React.createClass({
   propTypes: {
@@ -10,10 +16,9 @@ var ServiceItem = React.createClass({
     price: React.PropTypes.number.isRequired
   },
 
-  getClassNames () {
-    return classnames(
-      'ServiceItem',
-      this.props.chosen && 'isChosen'
+  getStyles () {
+    return Object.assign({},
+      this.props.chosen && styles.chosen
     );
   },
 
@@ -24,8 +29,9 @@ var ServiceItem = React.createClass({
   render () {
     return (
       <div
-       className={this.getClassNames()}
-       onClick={this.handleClick}>
+       className="ServiceItem"
+       onClick={this.handleClick}
+       style={this.getStyles()}>
         <span className="ServiceItem_name">{this.props.name}</span>
         <span className="ServiceItem_price">${this.props.price}</span>
       </div>

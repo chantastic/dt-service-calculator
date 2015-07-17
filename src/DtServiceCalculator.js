@@ -1,4 +1,5 @@
 var React = require('react');
+var ServiceItem = require('./ServiceItem');
 var TotalItem = require('./TotalItem');
 var classnames = require('classnames');
 
@@ -32,17 +33,15 @@ var DtServiceCalculator = React.createClass({
     return (
       <div className="DTServiceCalculator">
         <div className="ServiceList">
-          {this.props.services.map(({name, price, chosen}, i) => {
+          {this.props.services.map(({chosen, id, name, price}, i) => {
             return (
-              <div
-               className={classnames(
-                 'ServiceItem',
-                 chosen && 'isChosen'
-               )}
-               onClick={this.handleServiceClick.bind(null, i)}>
-                <span className="ServiceItem_name">{name}</span>
-                <span className="ServiceItem_price">${price}</span>
-              </div>
+              <ServiceItem
+               chosen={chosen}
+               index={i}
+               key={id}
+               price={price}
+               name={name}
+               onSelect={this.handleServiceClick} />
             );
           })}
         </div>

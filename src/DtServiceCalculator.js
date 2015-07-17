@@ -1,4 +1,5 @@
 var React = require('react');
+var TotalItem = require('./TotalItem');
 var classnames = require('classnames');
 
 function chosenServices (service) {
@@ -46,12 +47,7 @@ var DtServiceCalculator = React.createClass({
           })}
         </div>
 
-        <div className="SelectedServiceTotal">
-          <span className="SelectedServiceTotal_label">Total</span>
-          <span className="SelectedServiceTotal_total">
-            ${this.getSelectedServicesTotalPrice()}
-          </span>
-        </div>
+        <TotalItem total={this.getSelectedServicesTotalPrice()} />
       </div>
     );
   }
